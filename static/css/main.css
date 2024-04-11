@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    background-color: #F0F4F8;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 150px;
+    margin: 0;
+}
+
+.container{
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 2px;
+    background-color: #F0F4F8;
+    padding: 2px;
+    -webkit-box-shadow: 2px 2px 20px -4px rgba(0, 0, 0, 0.21);
+    box-shadow: 2px 2px 20px -4px rgba(0, 0, 0, 0.21);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.header {
+    background: linear-gradient(90deg, #5482b9 0%, #4375b3 40%, #2E6AB3 100%);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 1px 1px;
+    text-align: left;
+}
+
+.header h1, h2 {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.header-content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+.form-group {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group img {
+  width: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4375b3;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #788cff;
+}
+
+a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4375b3;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #788cff;
+}
