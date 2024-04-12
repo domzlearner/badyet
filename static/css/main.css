@@ -50,8 +50,8 @@ body{
   }
 
 .form-group {
-    margin-bottom: 20px;
-    padding: 10px;
+    /* margin-bottom: 20px; */
+    padding: 5px;
 }
 
 .form-group label {
@@ -61,12 +61,25 @@ body{
 
 .form-group input[type="text"],
 .form-group input[type="email"],
-.form-group input[type="password"] {
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+select,
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
 }
 
 .form-group img {
@@ -100,4 +113,23 @@ a {
 a:hover {
     text-decoration: underline;
     color: #788cff;
+}
+
+.transaction-list {
+    padding: 5px;
+    border: none;
+}
+
+.transaction-item {
+    border: none;
+}
+
+.transaction-name {
+    font-size: 16px;
+    border: none;
+}
+
+.no-transactions {
+    font-style: italic;
+    color: #999;
 }

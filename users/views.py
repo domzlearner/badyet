@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import UserProfileForm, UserRegistrationForm, EmailForm
 from .models import UserProfile
+from transactions.models import Transaction
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -26,7 +27,10 @@ def logout_view(request):
 
 @login_required
 def profile_view(request):
-    return render(request, 'users/profile.html')
+    user = request.user
+    user_profile = UserProfile.objects.get(user=user)
+    transactions = Transaction.objects.filter(user=user)
+    return render(request, 'users/profile.html', {'user_profile': user_profile, 'transactions': transactions})
 
 def register_view(request):
     if request.method == 'POST':
@@ -70,3 +74,13 @@ def edit_profile(request):
         profile_form = UserProfileForm(instance=profile)
         email_form = EmailForm(instance=request.user, initial={'email': user_email})
     return render(request, 'users/edit.html', {'profile_form': profile_form, 'email_form': email_form})
+
+@login_required
+def delete_transaction(request, transaction_id):
+    try:
+        transaction = Transaction.objects.get(id=transaction_id, user=request.user)
+        transaction.delete()
+    except Transaction.DoesNotExist:
+        # Handle if transaction does not exist or if user is not the owner
+        pass  # You can handle this according to your application logic
+    return redirect('profile')
